@@ -1,25 +1,14 @@
 import React from "react";
+import styles from "./styles/App.module.css"
 
-import { gql, useQuery } from "@apollo/client";
+// components
+import Header from "./components/layout/Header";
 
-const GET_DATA = gql`
-  query{
-      posts{
-        title
-      },
-      comments{
-        name,
-        text
-      }
-    }
-`;
 const App = () => {
-  const { data, loading } = useQuery(GET_DATA);
-  console.log({ data, loading });
   return (
-    <div>
-      <h1>Hello</h1>
-    </div>
+    <>
+      <Header />
+    </>
   );
 };
 
