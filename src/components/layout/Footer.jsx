@@ -3,7 +3,7 @@ import { Typography } from "@mui/material";
 
 const Footer = () => {
   return (
-    <div>
+    <footer>
       <Typography
         component="p"
         variant="p"
@@ -15,7 +15,7 @@ const Footer = () => {
       >
         Stay curious,There's always something new to learn and discover!
       </Typography>
-    </div>
+    </footer>
   );
 };
 
