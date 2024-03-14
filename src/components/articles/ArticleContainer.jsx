@@ -51,7 +51,7 @@ const ArticleContainer = ({ info }) => {
       <Divider variant="middle" sx={{ marginBottom: 1 }} />
       <CardActions>
         <Link
-          to={`articles/${slug}`}
+          to={`/articles/${slug}`}
           style={{
             display: "flex",
             alignItems: "center",

@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import Spin from "../../gifs/Spin-1s-200px.gif";
 import sanitize from "sanitize-html";
 // graphql
@@ -7,17 +7,18 @@ import { GET_AUTHOR } from "../../graphql/queries";
 import { useQuery } from "@apollo/client";
 // MUI
 import { Avatar, Container, Grid, Typography } from "@mui/material";
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 // components
 import ArticleContainer from "../articles/ArticleContainer";
 
 const AuthorPage = () => {
   const params = useParams();
+  const navigate = useNavigate();
   const { data, loading } = useQuery(GET_AUTHOR, {
     variables: {
       slug: params.slug,
     },
   });
-  console.log({ loading, data });
   return (
     <Container maxWidth="lg" sx={{ minHeight: "100vh" }}>
       {loading ? (
@@ -34,6 +35,7 @@ const AuthorPage = () => {
         </div>
       ) : (
         <Grid container mt={10}>
+          <ArrowBackIosIcon sx={{marginTop:'10px', ":hover":{cursor:"pointer"}}} onClick={()=>navigate(-1)} />
           <Grid
             item
             xs={12}
