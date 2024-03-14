@@ -1,5 +1,5 @@
 import React from "react";
-import Spin from '../../gifs/Eclipse-1s-137px.gif';
+import Spin from '../../gifs/Spin-1s-200px.gif';
 import { Link } from "react-router-dom";
 
 // graphql
@@ -10,7 +10,7 @@ import { Avatar, Divider, Grid, Typography } from "@mui/material";
 
 const Authors = () => {
   const { data, loading } = useQuery(GET_AUTHORS_INFO);
-  if (loading) return <img src={Spin}/>;
+  if (loading) return <img src={Spin} style={{scale:'0.5'}}/>;
   console.log(data);
   return (
     <div>
