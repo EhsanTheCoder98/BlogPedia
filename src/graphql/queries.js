@@ -18,4 +18,18 @@ const GET_ARTICLE_INFO = gql`
     }
  }
 `
-export {GET_ARTICLE_INFO} ;
+
+const GET_AUTHORS_INFO = gql`
+query{
+  authors {
+    name
+    slug
+    avatar {
+      url
+    }
+    field
+    id
+  }
+}
+`
+export {GET_ARTICLE_INFO,GET_AUTHORS_INFO} ;
