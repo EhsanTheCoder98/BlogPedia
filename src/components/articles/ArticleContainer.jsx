@@ -10,6 +10,7 @@ import {
   Divider,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const ArticleContainer = ({ info }) => {
   const { title, slug, coverPhoto, author } = info;
@@ -29,7 +30,9 @@ const ArticleContainer = ({ info }) => {
       </CardContent>
       <Divider variant="middle" sx={{marginBottom:1}}/>
       <CardActions>
-        <Button variant="outlined" size="small" sx={{width:'100%' , borderRadius:2}}>Read The Article</Button>
+        <Link to={`articles/${slug}`} style={{display:'flex',alignItems:'center',textDecoration:'none' ,width:'100%'}}>
+        <Button variant="outlined" size="small" color="secondary" sx={{width:'100%' , borderRadius:2}}>Read The Article</Button>
+        </Link>
       </CardActions>
     </Card>
   );

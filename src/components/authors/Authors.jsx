@@ -1,4 +1,6 @@
 import React from "react";
+import Spin from '../../gifs/Eclipse-1s-137px.gif';
+import { Link } from "react-router-dom";
 
 // graphql
 import { useQuery } from "@apollo/client";
@@ -8,7 +10,7 @@ import { Avatar, Divider, Grid, Typography } from "@mui/material";
 
 const Authors = () => {
   const { data, loading } = useQuery(GET_AUTHORS_INFO);
-  if (loading) return <h1>loading authors</h1>;
+  if (loading) return <img src={Spin}/>;
   console.log(data);
   return (
     <div>
@@ -20,8 +22,8 @@ const Authors = () => {
           return (
             <React.Fragment key={author.id}>
               <Grid item xs={12} padding={2}>
-                <a
-                  href={`authors/${author.slug}`}
+                <Link
+                  to={`authors/${author.slug}`}
                   style={{
                     display: "flex",
                     alignItems: "center",
@@ -32,7 +34,7 @@ const Authors = () => {
                   <Typography component="p" variant="p" color="text.secondary">
                     {author.name}
                   </Typography>
-                </a>
+                </Link>
               </Grid>
               {index !== data.authors.length -1 && 
               <Grid item xs={12}>
