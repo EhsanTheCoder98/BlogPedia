@@ -72,6 +72,7 @@ const GET_POST = gql`
         url
       }
       title
+      slug
     }
   }
 `;

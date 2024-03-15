@@ -7,6 +7,8 @@ import { useQuery } from "@apollo/client";
 // MUI
 import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+// components
+import CommentForm from "../comment/CommentForm";
 
 const ArticlePage = () => {
   const params = useParams();
@@ -57,6 +59,9 @@ const ArticlePage = () => {
           </Grid>
           <Grid item xs={12} mt={10} fontSize={23}>
             <div dangerouslySetInnerHTML={{__html:data.post.content.html}}></div>
+          </Grid>
+          <Grid item xs={12}>
+            <CommentForm slug={data.post.slug} />
           </Grid>
         </Grid>
       )}
