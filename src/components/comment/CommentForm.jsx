@@ -29,9 +29,9 @@ const CommentForm = ({ slug }) => {
       toast.success("Your comment is being reviewed and approved!", {
         position: "top-center",
       });
+      setText("")
     }
   };
-  console.log({ loading, data });
   return (
     <Grid
       container
@@ -86,7 +86,7 @@ const CommentForm = ({ slug }) => {
             Sending...
           </Button>
         )}
-
+        
         <ToastContainer />
       </Grid>
     </Grid>

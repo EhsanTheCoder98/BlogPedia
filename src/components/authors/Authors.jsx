@@ -21,7 +21,7 @@ const Authors = () => {
         {data.authors.map((author,index) => {
           return (
             <React.Fragment key={author.id}>
-              <Grid item xs={12} padding={2}>
+              <Grid item xs={12} padding={2} >
                 <Link
                   to={`authors/${author.slug}`}
                   style={{

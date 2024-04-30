@@ -9,6 +9,7 @@ import { Avatar, Box, Container, Grid, Typography } from "@mui/material";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 // components
 import CommentForm from "../comment/CommentForm";
+import Comments from "../comment/Comments";
 
 const ArticlePage = () => {
   const params = useParams();
@@ -34,7 +35,7 @@ const ArticlePage = () => {
           <img src={Spin} />
         </div>
       ) : (
-        <Grid container>
+        <Grid container width="90%" m="0 auto">
           <Grid item xs={12} mt={9} sx={{display:'flex', justifyContent:'space-between' }}>
               <ArrowBackIosIcon sx={{marginTop:'10px', ":hover":{cursor:"pointer"}}} onClick={()=>navigate(-1)} />
             <Typography
@@ -62,6 +63,9 @@ const ArticlePage = () => {
           </Grid>
           <Grid item xs={12}>
             <CommentForm slug={data.post.slug} />
+          </Grid>
+          <Grid item xs={12} >
+            <Comments slug={data.post.slug} />
           </Grid>
         </Grid>
       )}
